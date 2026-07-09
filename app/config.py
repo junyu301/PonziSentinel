@@ -5,7 +5,7 @@ BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 class Config:
     SECRET_KEY = os.environ.get("SECRET_KEY", "change-this-in-production")
-    ETHERSCAN_API_KEY = os.environ.get("ETHERSCAN_API_KEY", "5E295MEC7JVFZJ69W3CN5AC55IXKNU7CWW")
+    ETHERSCAN_API_KEY = os.environ.get("ETHERSCAN_API_KEY", "your-etherscan-api-key")
 
     # SQLite database
     DATABASE_PATH = os.environ.get("DATABASE_PATH", os.path.join(BASE_DIR, "data", "detections.db"))
