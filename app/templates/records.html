@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}检测记录统计 - PonziSentinel{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/records.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="stats-panel">
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem; background: linear-gradient(120deg, #e0f0ff, #c084fc); background-clip: text; -webkit-background-clip: text; color: transparent;">检测历史记录</h2>
+        <p style="color: #aac8ff; margin-bottom: 1.5rem;">所有已检测的智能合约地址及详细判别结果</p>
+
+        <div class="control-bar">
+            <div class="filter-group">
+                <label>合约类别筛选</label>
+                <select id="categoryFilter">
+                    <option value="all">全部合约</option>
+                    <option value="ponzi">旁氏合约</option>
+                    <option value="normal">正常合约</option>
+                </select>
+            </div>
+            <div class="sort-group">
+                <label>时间排序</label>
+                <button id="sortAscBtn" class="sort-btn"> 从旧到新 <span>&uarr;</span></button>
+                <button id="sortDescBtn" class="sort-btn"> 从新到旧 <span>&darr;</span></button>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="data-table" id="recordsTable">
+                <thead>
+                    <tr>
+                        <th>合约地址</th>
+                        <th>检测时间</th>
+                        <th>合约类别</th>
+                        <th>置信度</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr class="placeholder-row">
+                        <td colspan="4" style="text-align: center;">加载检测记录中...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p style="font-size: 0.75rem; text-align: right; margin-top: 1rem; color: #6c8fc7;">* 数据实时更新，支持按类别筛选及时间排序</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/records.js') }}"></script>
+{% endblock %}

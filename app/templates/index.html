@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}PonziSentinel检测{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div id="detecting-bar">
+        <div class="detecting-bar-part">
+            <img src="{{ url_for('static', filename='img/system_icon1.png') }}" class="sidebar-icon">
+            <h3 class="sidebar-title">检测系统</h3>
+            <p>为防范以太坊智能合约的非法资金流动，促进区块链技术的可持续发展。</p>
+            <p>我们提供PonziSentinel旁氏骗局检测系统，助投资者发现风险，保障资金安全。</p>
+        </div>
+        <div class="detecting-bar-part">
+            <img src="{{ url_for('static', filename='img/write_icon1.png') }}" class="sidebar-icon">
+            <h3 class="sidebar-title">合约地址输入</h3>
+            <h5>待检测内容</h5>
+            <div id="warning"></div>
+            <textarea name="contractAddress" id="contractAddress" placeholder="请在此输入或粘贴待检测的以太坊智能合约地址..."></textarea>
+        </div>
+        <div class="detecting-bar-part">
+            <input type="submit" id="analyzeBtn" value="开始分析">
+        </div>
+    </div>
+
+    <div id="analysis-bar">
+        <div>
+            <img src="{{ url_for('static', filename='img/sheet_icon1.png') }}" class="sidebar-icon">
+            <h3 class="sidebar-title">分析结果</h3>
+        </div>
+        <div>
+            <div id="contract-content">
+                <h5>合约原文</h5>
+                <pre><code id="code"></code></pre>
+                <button id="showMoreBtn" class="show-more-btn">打开源代码...</button>
+            </div>
+        </div>
+        <div id="detecting-result">
+            <h5>检测结果</h5>
+            <div id="detecting-result-border">
+                <svg id="detecting-result-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.5 15.5L19 19M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#bf4cff" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <div id="detecting-result-explain">
+                    <h3 id="conclusion">合约待检测</h3>
+                    <h5 id="confidence-level">置信度：？</h5>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="total-bar">
+        <div class="total-stats">
+            <div class="stat-item">
+                <span class="stat-label">已检测合约地址</span>
+                <span class="stat-value" id="totalUniqueContracts">...</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">旁氏骗局合约数</span>
+                <span class="stat-value" id="totalPonziContracts">...</span>
+            </div>
+        </div>
+        <a href="{{ url_for('pages.records') }}" class="total-btn">
+            查看详细检测记录 <span class="btn-arrow">&rarr;</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}

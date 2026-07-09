@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+
+/* ----- 全局重置 & 霓虹深色主题 ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at 10% 20%, #0a0718 0%, #02010a 100%);
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    color: #eef5ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 抽象科技网格线 */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(160, 0, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    width: 85%;
+    max-width: 1400px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* ----- 头部 ----- */
+#main-header {
+    background: rgba(12, 18, 34, 0.65);
+    border-bottom: 1px solid rgba(0, 200, 255, 0.3);
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 40px;
+}
+
+#main-header h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00ffff, #b000ff, #7a2eff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.3px;
+}
+
+#main-header p {
+    margin-top: 8px;
+    color: #a5b9e6;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* ----- 导航栏 ----- */
+.nav-links {
+    padding-top: 10px;
+    flex-shrink: 0;
+}
+
+.nav-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    border: none;
+    outline: none;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 0.65rem 1.4rem;
+    background: rgba(10, 20, 40, 0.65);
+    font-weight: 550;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #c2e9ff;
+    text-shadow: 0 0 2px #0af, 0 0 4px #50f;
+    transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    border: none;
+    outline: none;
+    box-shadow: none;
+    clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 4% 100%);
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    background: rgba(0, 180, 230, 0.25);
+    text-shadow: 0 0 10px #0cf, 0 0 18px #b77eff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px #0af, 0 0 18px #a55eff;
+}
+
+.nav-links a:active {
+    transform: translateY(1px);
+    box-shadow: 0 0 6px #0cf, 0 0 12px #f0f;
+}
+
+.nav-links a:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #0cf, 0 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+/* ----- 底部 ----- */
+#main-footer {
+    text-align: center;
+    background: #0b0820;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+    color: #adc6ff;
+    padding: 1.2rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* ----- 工具类 ----- */
+.clr {
+    clear: both;
+}
+
+#warning {
+    color: #ff7b9c;
+}
+
+/* ----- 响应式 ----- */
+@media (max-width: 700px) {
+    .container {
+        width: 92%;
+    }
+    #main-header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+}

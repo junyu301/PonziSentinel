@@ -1,0 +1,152 @@
+/* ========= 知识库页面专属样式 ========= */
+
+.header {
+    text-align: center;
+    margin: 3.5rem auto;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00ffff, #b000ff, #7a2eff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header h1 i {
+    background: linear-gradient(145deg, #0ff, #a55eff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 2.8rem;
+}
+
+/* 卡片网格 */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 2rem;
+}
+
+.category-card {
+    background: rgba(12, 18, 34, 0.65);
+    border-radius: 2rem;
+    border: 1px solid rgba(0, 200, 255, 0.25);
+    transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 230, 250, 0.7);
+    background: rgba(16, 22, 48, 0.75);
+}
+
+/* 卡片头部 */
+.card-header {
+    padding: 1.4rem 1.6rem 0.9rem 1.6rem;
+    border-bottom: 1.5px solid rgba(130, 0, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(90deg, rgba(0, 30, 60, 0.3), rgba(30, 0, 60, 0.1));
+}
+
+.card-header i {
+    font-size: 2rem;
+    background: rgba(0, 255, 255, 0.15);
+    padding: 10px;
+    border-radius: 1.2rem;
+    color: #0ff;
+    transition: all 0.2s;
+}
+
+.category-card:hover .card-header i {
+    color: #d27eff;
+    background: rgba(160, 0, 255, 0.2);
+}
+
+.card-header h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: linear-gradient(120deg, #e0f0ff, #c084fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.3px;
+}
+
+/* 按钮容器 */
+.buttons-container {
+    padding: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    flex: 1;
+    align-content: flex-start;
+}
+
+/* 资源链接按钮 */
+.resource-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(20, 25, 55, 0.7);
+    border: 1px solid rgba(138, 43, 226, 0.6);
+    border-radius: 60px;
+    padding: 0.6rem 1.3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #ccdeff;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    line-height: 1.3;
+}
+
+.resource-btn:hover {
+    background: rgba(100, 0, 255, 0.35);
+    border-color: #0ff;
+    transform: scale(1.02) translateY(-1px);
+    color: #ffffff;
+}
+
+.btn-favicon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.resource-btn span {
+    white-space: normal;
+    word-break: break-word;
+}
+
+.fallback-icon {
+    font-size: 0.9rem;
+    width: 18px;
+    text-align: center;
+    color: #0ff;
+}
+
+/* 响应式 */
+@media (max-width: 760px) {
+    .categories-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .resource-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+    .header h1 { font-size: 2.2rem; gap: 8px; }
+}
+@media (max-width: 480px) {
+    .resource-btn { width: 100%; justify-content: flex-start; }
+    .card-header h2 { font-size: 1.4rem; }
+}

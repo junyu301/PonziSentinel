@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-change-this-in-production}
+      - ETHERSCAN_API_KEY=${ETHERSCAN_API_KEY:-5E295MEC7JVFZJ69W3CN5AC55IXKNU7CWW}
+    volumes:
+      - ./models:/app/models:ro
+      - ./data:/app/data
+    restart: unless-stopped

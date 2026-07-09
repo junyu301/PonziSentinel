@@ -1,0 +1,166 @@
+/* ========= 检测记录页专属样式 ========= */
+
+.stats-panel {
+    background: rgba(12, 18, 34, 0.7);
+    border: 1px solid rgba(0, 200, 255, 0.35);
+    border-radius: 1.5rem;
+    padding: 1.8rem;
+    margin: 1rem 0 2rem;
+    transition: transform 0.25s ease, border-color 0.2s;
+}
+
+.stats-panel:hover {
+    border-color: rgba(0, 230, 250, 0.7);
+    background: rgba(16, 22, 48, 0.8);
+}
+
+/* 控制栏 */
+.control-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 200, 255, 0.25);
+}
+
+.filter-group, .sort-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label, .sort-group label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #a5c6ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+select, .sort-btn {
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(0, 200, 255, 0.5);
+    border-radius: 2rem;
+    padding: 0.6rem 1.2rem;
+    font-family: 'Inter', monospace;
+    font-size: 0.9rem;
+    color: #eef5ff;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+}
+
+select:hover, .sort-btn:hover {
+    border-color: #0cf;
+    background: rgba(0, 30, 60, 0.7);
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.3);
+}
+
+.sort-group {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.sort-btn {
+    background: linear-gradient(95deg, rgba(95, 46, 255, 0.7), rgba(11, 207, 223, 0.7));
+    border: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.sort-btn:hover {
+    background: linear-gradient(95deg, #7a4eff, #2ad9e8);
+    transform: translateY(-1px);
+}
+
+/* 表格容器 */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 600px;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 1rem 1rem;
+    background: rgba(0, 30, 50, 0.6);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.4);
+    font-weight: 600;
+    color: #b8e2ff;
+    letter-spacing: 0.5px;
+}
+
+.data-table td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid rgba(0, 200, 255, 0.2);
+    color: #e0edff;
+    word-break: break-all;
+}
+
+.data-table tr:hover td {
+    background: rgba(0, 200, 255, 0.08);
+}
+
+/* 合约类别徽章 */
+.badge-ponzi {
+    background: rgba(255, 40, 100, 0.2);
+    border-left: 3px solid #ff2c6d;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-weight: 500;
+    display: inline-block;
+    color: #ff9eb5;
+}
+
+.badge-normal {
+    background: rgba(0, 200, 255, 0.15);
+    border-left: 3px solid #0cf;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-weight: 500;
+    display: inline-block;
+    color: #7ee0ff;
+}
+
+.confidence {
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 0.5px;
+}
+
+.placeholder-row td {
+    text-align: center;
+    padding: 2rem;
+    color: #8aa3cc;
+    font-style: italic;
+}
+
+/* 响应式 */
+@media (max-width: 700px) {
+    .brand h1 {
+        font-size: 1.5rem;
+    }
+    .control-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .sort-group {
+        justify-content: space-between;
+    }
+    .stats-panel {
+        padding: 1.2rem;
+    }
+}

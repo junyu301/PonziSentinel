@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>{% block title %}PonziSentinel{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<header id="main-header">
+    <div class="container">
+        <div class="brand">
+            <h1>以太坊旁氏骗局检测系统</h1>
+            <p>PonziSentinel v0.0.1</p>
+        </div>
+        <nav class="nav-links" aria-label="主导航菜单">
+            <ul>
+                <li><a href="https://github.com/junyu301/PonziSentinel" target="_blank" rel="noopener noreferrer">PonziSentinel 细节</a></li>
+                <li><a href="{{ url_for('pages.index') }}">合约检测</a></li>
+                <li><a href="{{ url_for('pages.knowledges') }}">相关链接</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer id="main-footer">
+    <p>Copyright &copy; 2026 PonziSentinel. All right reserved.</p>
+</footer>
+
+<div style="margin-top:50px;"></div>
+
+{% block extra_js %}{% endblock %}
+</body>
+</html>
