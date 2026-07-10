@@ -86,6 +86,7 @@ cd PonziSentinel
 # 2. 配置环境变量
 cp .env.example .env
 # 编辑 .env，填入你的 SECRET_KEY 和 ETHERSCAN_API_KEY
+nano .env
 
 # 3. 启动容器
 docker compose up -d
